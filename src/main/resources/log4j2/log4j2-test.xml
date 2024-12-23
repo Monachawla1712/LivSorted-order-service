@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" strict="true" name="Log4jConfiguration">
+
+	<Appenders>
+		<Appender type="Console" name="STDOUT">
+			<Layout type="PatternLayout"
+				pattern="%d{dd/MM/yyyy HH:mm:ss} [%p\t] [%t\t] - %c{3} (Line - %L) - %m%n" />
+		</Appender>
+	</Appenders>
+
+	<Loggers>
+		<Root level="debug">
+			<AppenderRef ref="STDOUT" level="error" />
+		</Root>
+	</Loggers>
+
+</Configuration>

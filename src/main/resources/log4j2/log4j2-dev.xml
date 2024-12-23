@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" strict="true" name="Log4jConfiguration">
+
+	<CustomLevels>
+		<CustomLevel name="EVENT" intLevel="99" />
+	</CustomLevels>
+
+	<Appenders>
+		<Appender type="Console" name="STDOUT">
+			<Layout type="PatternLayout"
+				pattern="%d{dd/MM/yyyy HH:mm:ss} [%p\t] [%t\t] - %c{3} (Line - %L) - %m%n" />
+		</Appender>
+		<RollingFile name="RollingFile" fileName="/tmp/logs/dev/catalog-boot.log"
+			filePattern="/tmp/logs/dev/catalog-boot-%d{MM-dd-yyyy}-%i.log.gz">
+			<PatternLayout>
+				<Pattern>%d{dd/MM/yyyy HH:mm:ss} [%p\t] [%t\t] - %c{3} (Line - %L) - %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="100" />
+		</RollingFile>
+		<RollingFile name="RollingFileEvents" fileName="/tmp/logs/dev/catalog-boot-events.log"
+			filePattern="/tmp/logs/dev/catalog-boot-events-%d{MM-dd-yyyy}-%i.log.gz">
+			<PatternLayout>
+				<Pattern>%m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="100" />
+		</RollingFile>
+
+	</Appenders>
+
+	<Loggers>
+		<Root level="debug">
+			<AppenderRef ref="STDOUT" level="info" />
+			<AppenderRef ref="RollingFile" level="info" />
+			<AppenderRef ref="RollingFileEvents" level="EVENT" />
+		</Root>
+	</Loggers>
+
+</Configuration>

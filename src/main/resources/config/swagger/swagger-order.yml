@@ -1,0 +1,13 @@
+title: Sorted Order Service
+description: Sorted Order Service
+version: 1.0
+termsOfServiceUrl: https://livesorted.com
+contact:
+    name: sorted
+    url: #
+    email: support@livesorted.com
+license: Copyright Licence
+licenseUrl: https://livesorted.com
+host_local: localhost:8610
+host_dev: order-dev.livesorted.com
+host_prod: order.livesorted.com

@@ -1,0 +1,15 @@
+/target/
+/.classpath
+/.pmd
+/.pmdruleset.xml
+/.project
+/.settings/
+/.clover/
+/test-output/
+/bin/
+/.fbExcludeFilterFile
+/.apt_generated/
+**/.DS_Store
+/.idea
+/src/main/resources/application.yml
+*.iml
