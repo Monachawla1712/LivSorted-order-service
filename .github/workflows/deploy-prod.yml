@@ -63,10 +63,10 @@ jobs:
       #     minimum-approvals: 1
       #     exclude-workflow-initiator-as-approver: false
 
-      # - name: Code Deploy
-      #   run: |
-      #         aws deploy create-deployment \
-      #           --application-name Consumer-app \
-      #           --deployment-group-name Consumer-app-prod-oms-service \
-      #           --s3-location bucket=code-deploy-livsorted,key=consumer-app-service/oms-service.tar,bundleType=tar \
-      #           --deployment-config-name CodeDeployDefault.OneAtATime
+      - name: Code Deploy
+        run: |
+              aws deploy create-deployment \
+                --application-name Consumer-app \
+                --deployment-group-name Consumer-app-prod-oms-service \
+                --s3-location bucket=code-deploy-livsorted,key=consumer-app-service/oms-service.tar,bundleType=tar \
+                --deployment-config-name CodeDeployDefault.OneAtATime
